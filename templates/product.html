@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+        <title>Product</title>
+        <style>
+            *,*::after,*::before{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html{
+                font-size: 62.5%;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: "Megrim", system-ui;
+                min-height: 100vh;
+                background-image: linear-gradient(to bottom right , #9be15d, #00e3ae);
+            }
+            .container{
+                width: 95rem;
+                margin: 0 auto;
+                display: grid;
+                place-items: center;
+            }
+            .container .main_name{
+                margin-top: 50px;
+                text-align: center;
+                font-size: 60px;
+                color: white;
+                transform: skewY(-5deg);
+                position: relative;
+            }
+            .container .main_name::before{
+                content: "";
+                position: absolute;
+                left: -5px;
+                top: 15px;
+                width: 55rem;
+                height: 100%;
+                z-index: -5;
+                opacity: 0.5;
+                transform: skewY(15deg);
+                background: linear-gradient(to bottom, #00e3ae, #9be15d);
+            }
+            .container .product{
+                box-shadow: 25px 25px 100px 25px rgba(0, 0, 0, 0.5);
+                margin-top: 75px;
+                width: 65%;
+                position: relative;
+            }
+            .container .product .organic{
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                background: linear-gradient(to bottom , #00e3ae , #9be15d);
+                right: -30px;
+                top: -45px;
+                text-align: center;
+                line-height: 100px;
+                z-index: 5;
+            }
+            .product .organic h6{
+                font-size: 20px;
+                font-family: sans-serif;
+                color: white;
+                transform: skew(-25deg,15deg);
+            }
+            .product .to_return_back{
+                border-radius: 5px;
+                background-color: white;
+                padding: 5px 25px;
+                font-size: 17px;
+                text-decoration: none;
+                font-weight: bold;
+                font-family: sans-serif;
+                text-align: center;
+                position: relative;
+                left: 50px;
+                top: 30px;
+                z-index: 5;
+                transition: all 0.5s;
+            }
+            .product .to_return_back:focus,
+            .product .to_return_back:active{
+                color: blue;
+            }
+            .product .to_return_back span{
+                position: absolute;
+                left: 10px;
+                top: 30%;
+                transform: translate(-50%,-50%);
+            }
+            .product .product_hero{
+                height: 190px;
+                position: relative;
+                top: -20px;
+            }
+            .product .product_hero::before{
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                opacity: 0.5;
+                background: linear-gradient(to bottom , #00e3ae , #9be15d);
+                z-index: 3;
+                top: 0;
+                left: 0;
+            }
+            .product .product_hero .emoji{
+                font-size: 100px;
+                position: absolute;
+            }
+            .product .product__1{
+                left: 15px;
+                top: 10px;
+            }
+            .product .product__2{
+                left: 90px;
+                top: -10px;
+            }
+            .product .product__3{
+                left: 165px;
+                top: -15px;
+            }
+            .product .product__4{
+                left: 250px;
+                top: -9px;
+            }
+            .product .product__5{
+                left: 330px;
+                top: -7px;
+            }
+            .product .product__6{
+                left: 420px;
+                top: 0px;
+            }
+            .product .product__7{
+                left: 480px;
+                top: 60px;
+            }
+            .product .product__8{
+                left: 117px;
+                top: 60px;
+            }
+            .product .product__9{
+                left: 206px;
+                top: 57px;
+            }
+            .product .product__10{
+                left: 290px;
+                top: 50px;
+            }
+            .product .product__11{
+                left: 380px;
+                top: 60px;
+            }
+            .product .product_name{
+                background: linear-gradient(to bottom , #00e3ae , #9be15d);
+                text-align: center;
+                padding: 10px 0px;
+            }
+            .product .product_name h3{
+                color: white;
+                font-size: 50px;
+            }
+            .product .details{
+                padding: 25px 50px;
+                background-color: white;
+                display: grid;
+                grid-template-columns: repeat(auto-fill,minmax(calc(30.875rem - 100px),1fr));
+            }
+            .product .details p{
+                font-size: 20px;
+                padding: 15px;
+                font-family: sans-serif;
+                font-weight: bold;
+            }
+            .product .details p span{
+                padding-right: 5px;
+            }
+            .product .add{
+                background-color: #9be15d;
+                width: calc(100% + 60px);
+                display: block;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+                padding: 20px 0px;
+                margin-left: -30px;
+                transform: skewX(-20deg);
+                transition: all 0.5s;
+            }
+            .product .add .add_emoji{
+                font-size: 20px;
+                transform: skewX(20deg);
+                display: inline-block;
+            }
+            .product .add .add_shopping{
+                font-size: 20px;
+                font-weight: bold;
+                font-family: sans-serif;
+                transform: skewX(20deg);
+                display: inline-block;
+            }
+            .product .add:hover{
+                transform: skewX(-20deg) scale(1.05);
+                background: linear-gradient(to bottom , #00e3ae , #9be15d);
+            }
+            .product .details_product{
+                background-color: white;
+                font-family: sans-serif;
+                padding: 45px;
+                line-height: 3.5rem;
+                font-size: 19px;
+                font-weight: lighter;
+                color: #555;
+            }
+            .NOT_ORGANIC{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="main_name">🌽 Node Farm 🥦</h1>
+            <figure class="product">
+                <div class="organic {%PRODUCT_ORGANIC%}">
+                    <h6>Organic</h6>
+                </div>
+                <a href="/overview" class="to_return_back"><span>👈</span>Back</a>
+                <div class="product_hero">
+                    <span class="emoji product__1">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__2">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__3">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__4">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__5">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__6">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__7">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__8">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__9">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__10">{%EMOJI_PRODUCT%}</span>
+                    <span class="emoji product__11">{%EMOJI_PRODUCT%}</span>
+                </div>
+                <div class="product_name">
+                    <h3>{%PRODUCT_NAME%}</h3>
+                </div>
+                <div class="details">
+                    <p class="place_product"><span class="place_emoji">🌍</span>From {%PRODUCT_FROM%}</p>
+                    <p class="pros_product"><span class="pros_emoji">❤️</span>{%PRODUCT_NUTRIENTS%}</p>
+                    <p class="products_of_product"><span class="product_emoji">📦</span>{%PRODUCT_QUENTITY%}</p>
+                    <p class="product_price"><span class="price_emoji">🏷</span>{%PRODUCT_PRICE%}€</p>
+                </div>
+                <a href="#" class="add">
+                    <span class="add_emoji">🛒</span>
+                    <span class="add_shopping">Add to shopping card ({%PRODUCT_PRICE%}€)</span>
+                </a>
+                <p class="details_product">
+                    {%PRODUCT_DESCRIPTION%}
+                </p>
+            </figure>
+        </div>
+    </body>
+</html>

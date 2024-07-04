@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+        <link rel="icon" href="../iamges/ear-of-maize.256x249.png">
+        <title>NODE FARM</title>
+        <style>
+            *,
+            *::before,
+            *::after{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html{
+                font-size: 62.5%;
+                box-sizing: border-box;
+            }
+            body{
+                font-family: "Megrim", system-ui;
+                font-weight: 400;
+                font-style: normal;
+                color: #555;
+                line-height: 1.7;
+                min-height: 100vh;
+                background: linear-gradient( to bottom right,#9be15d, #00e3ae);
+                padding: 5rem 5rem 10rem;
+            }
+            .main_code{
+                text-align: center;
+                padding: 15px;
+            }
+            .main_code h1{
+                font-size: 60px;
+                color: white;
+                font-weight: bold;
+                transform: skew(0,-5deg);
+                position: relative;
+            }
+            .main_code h1::before{
+                transform: skewY(10deg);
+                content: "";
+                position: absolute;
+                width: 40%;
+                height: 70%;
+                top: 25px;
+                left: 395px;
+                opacity: .7;
+                z-index: -5;
+                background-image: linear-gradient(to bottom , #9be15d, #00e3ae);
+            }
+            .container{
+                width: 95rem;
+                margin: 50px auto;
+            }
+            .container_card .card{
+                height: 75px;
+                display: flex;
+                align-items: center;
+                background-color: white;
+                transform: skewX(-20deg);
+                margin-bottom: 50px;
+                box-shadow: 3px 10px 30px 20px rgba(0, 0, 0, .2);
+                transition: all .5s;
+                cursor: pointer;
+            }
+            .container .container_card .card:hover{
+                transform: scale(1.05) skewX(-20deg);
+                box-shadow: 3px 10px 30px 20px rgba(0, 0, 0, .5);
+            }
+            .card .emoji{
+                font-size: 30px;
+                letter-spacing: -15px;
+                padding: 0px 30px;
+            }
+            .card .product_name{
+                background: linear-gradient(to bottom , #00e3ae,#9be15d);
+                padding: 16px 35px;
+                font-size: 17px;
+                color: white;
+            }
+            .card .details{
+                display: flex;
+                align-items: center;
+            }
+            .card .details .organic{
+                font-size: 35px;
+                padding: 17px 30px;
+                font-family: sans-serif;
+            }
+            .NOT_ORGANIC{
+                display: none;
+            }
+            .card .details .quantity{
+                font-size: 25px;
+                padding: 23px 20px;
+                font-family: sans-serif;
+            }
+            .card .details .organic,
+            .card .details .quantity{
+                border-right: 1px solid gray;
+            }
+            .card .details .detail_price{
+                font-size: 23px;
+                padding: 0px 15px;
+                font-family: sans-serif;
+            }
+            .card .link{
+                background: linear-gradient(to bottom , #00e3ae , #9be15d);
+                flex-grow: 1;
+                display: grid;
+                place-items: center;
+                height: 100%;
+                
+            }
+            .card .link a span{
+                color: white;
+            }
+            .card .link a{
+                font-size: 20px;
+                text-decoration: none;
+                font-family: sans-serif;
+                transition: all 0.5s;
+            }
+            .card .link a span:hover{
+                /* background: linear-gradient(to bottom , #9be15d); */
+                /* background-color: rgb(179, 164, 164); */
+                box-shadow: 10px 10px 50px 10px rgba(0, 0, 0, .5);
+            }
+            .card .product_name h2,
+            .acrd .organic h6,
+            .card .quantity h6,
+            .card .detail_price h6,
+            .card .link a{
+                transform: skewX(20deg);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main_code">
+            <h1>🌽 Node Farm 🥦</h1>
+        </div>
+        <div class="container">
+            <div class="container_card">
+               {%PRODUCT_CARD%}
+            </div>
+        </div>
+    </body>
+</html>
